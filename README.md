@@ -15,22 +15,22 @@ La persistencia es **en memoria** (sin base de datos), pensada con fines educati
 ### 1️⃣ Instalar dependencias
 ```bash
 npm install
-
+```
 ### 2️⃣ Instalar dependencias
 ```bash
 npm run dev
 http://localhost:3000
-
+```
 ###❤️ Health Check
 ```bash
 GET /health
-
+```
 Response
 ```bash
 {
   "ok": true
 }
-
+```
 ###📌 Recurso: Task
 Modelo
 {
