@@ -33,7 +33,7 @@ Response
 }
 ```
 ### 📌 Recurso: Task
-Modelo
+##### Modelo
 ```bash
 {
   "id": number,
@@ -159,18 +159,18 @@ DELETE /tasks/:id
   "error": "task no encontrada"
 }
 ```
-###⚠️ Persistencia
+### ⚠️ Persistencia
 -Los datos se guardan en memoria
 -Se pierden al reiniciar el servidor
 -No usar en producción
 
-###🎯 Objetivo del proyecto
+### 🎯 Objetivo del proyecto
 -Entender la estructura de una API REST
 -Separación de responsabilidades (routes / controllers / data)
 -Uso correcto de HTTP status codes
 -Modularización y helpers
 
-###🛠 Posibles mejoras
+### 🛠 Posibles mejoras
 -Agregar capa services
 -Conectar base de datos (PostgreSQL / MongoDB)
 -Validaciones de datos
