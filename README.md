@@ -12,5 +12,160 @@ La persistencia es **en memoria** (sin base de datos), pensada con fines educati
 
 ---
 
+### 1️⃣ Instalar dependencias
+```bash
+npm install
+
+### 2️⃣ Instalar dependencias
+```bash
+npm run dev
+http://localhost:3000
+
+###❤️ Health Check
+```bash
+GET /health
+
+Response
+```bash
+{
+  "ok": true
+}
+
+###📌 Recurso: Task
+Modelo
+{
+  "id": number,
+  "title": string,
+  "done": boolean
+}
+
+📘 Endpoints
+➕ Crear una task
+POST /tasks
 
 
+Body
+
+{
+  "title": "Comprar leche",
+  "done": false
+}
+
+
+Response – 201 Created
+
+{
+  "id": 1,
+  "title": "Comprar leche",
+  "done": false
+}
+
+📄 Listar todas las tasks
+GET /tasks
+
+
+Response – 200 OK
+
+[
+  {
+    "id": 1,
+    "title": "Comprar leche",
+    "done": false
+  }
+]
+
+🔍 Obtener una task por ID
+GET /tasks/:id
+
+
+Response – 200 OK
+
+{
+  "id": 1,
+  "title": "Comprar leche",
+  "done": false
+}
+
+
+Errores posibles
+
+400 Bad Request → id inválido
+
+404 Not Found → task no encontrada
+
+✏️ Reemplazar una task (PUT)
+PUT /tasks/:id
+
+
+Body
+
+{
+  "title": "Comprar pan",
+  "done": true
+}
+
+
+Response – 200 OK
+
+{
+  "id": 1,
+  "title": "Comprar pan",
+  "done": true
+}
+
+🩹 Actualizar parcialmente una task (PATCH)
+PATCH /tasks/:id
+
+
+Body (ejemplo)
+
+{
+  "done": true
+}
+
+
+Response – 200 OK
+
+{
+  "id": 1,
+  "title": "Comprar leche",
+  "done": true
+}
+
+🗑 Eliminar una task
+DELETE /tasks/:id
+
+
+Response – 204 No Content
+
+❌ Errores comunes
+400 – Bad Request
+{
+  "error": "title debe ser un string no vacío"
+}
+
+404 – Not Found
+{
+  "error": "task no encontrada"
+}
+
+###⚠️ Persistencia
+-Los datos se guardan en memoria
+-Se pierden al reiniciar el servidor
+-No usar en producción
+
+###🎯 Objetivo del proyecto
+-Entender la estructura de una API REST
+-Separación de responsabilidades (routes / controllers / data)
+-Uso correcto de HTTP status codes
+-Modularización y helpers
+
+###🛠 Posibles mejoras
+-Agregar capa services
+-Conectar base de datos (PostgreSQL / MongoDB)
+-Validaciones de datos
+-Manejo centralizado de errores
+
+Autenticación (JWT)
+
+Tests automáticos
