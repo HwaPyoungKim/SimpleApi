@@ -1,7 +1,7 @@
 import { Router } from "express";
 import {
     createTask,
-    listTask,
+    listTasks,
     getTaskById,
     updateTaskPut,
     updateTaskPatch,
@@ -11,7 +11,7 @@ import {
 const router = Router();
 
 router.post("/", createTask);
-router.get("/", listTask);
+router.get("/", listTasks);
 router.get("/:id", getTaskById);
 router.put("/:id", updateTaskPut);
 router.patch("/:id", updateTaskPatch);
