@@ -1,5 +1,5 @@
-import { tasks, nextId } from "../data/tasks.db";
-import * as db from "../data/tasks.db";
+import { tasks, nextId } from "../data/tasks.db.js";
+import * as db from "../data/tasks.db.js";
 
 function parseId(req){
     const id = Number(req.params.id);
@@ -25,4 +25,24 @@ export function createTask(req, res) {
 
     tasks.push(newTask);
     return res.status(201).json(newTask);
+}
+
+export function listTask(res){
+    return res.json(tasks);
+}
+
+export function getTaskById(req,res){
+
+}
+
+export function updateTaskPut(req,res){
+
+}
+
+export function updateTaskPatch(req,res){
+
+}
+
+export function deleteTask(req,res){
+    
 }
